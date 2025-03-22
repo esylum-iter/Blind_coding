@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hidden Text Matcher</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            width: 90%;
+            max-width: 900px;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-container {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+        }
+        .image-container img {
+            width: 100%;
+            max-width: 400px;
+            border-radius: 10px;
+        }
+        .input-container {
+            margin-top: 20px;
+            width: 100%;
+            text-align: center;
+        }
+        textarea {
+            width: 90%;
+            height: 150px;
+            background: transparent;
+            color: transparent;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            resize: none;
+            outline: none;
+            padding: 10px;
+            border-radius: 5px;
+            caret-color: transparent;
+        }
+        textarea::selection {
+            background: transparent;
+        }
+        button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            border: none;
+            background-color: #007BFF;
+            color: white;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        #result {
+            margin-top: 10px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        @media (min-width: 768px) {
+            .content {
+                flex-direction: row;
+                justify-content: space-between;
+            }
+            .image-container, .input-container {
+                width: 48%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="image-container">
+                <img src="https://i.ibb.co/j9M1sd7F/image.png" alt="code-Image">
+            </div>
+            <div class="input-container">
+                <textarea id="hiddenInput" placeholder="Type here..."></textarea>
+                <button onclick="compareText()">Submit</button>
+                <p id="result"></p>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        async function fetchPredefinedText() {
+            const githubRawUrl = 'https://raw.githubusercontent.com/manishgupta2026/text-similarity-data/main/predefined_text.txt';
+            try {
+                const response = await fetch(githubRawUrl);
+                if (!response.ok) throw new Error('Failed to fetch ');
+
+                const encodedText = await response.text();
+                return atob(encodedText.trim()); // 
+            } catch (error) {
+                console.error(error);
+                return null;
+            }
+        }
+
+        function calculateSimilarity(userText, predefinedText) {
+            const normalize = text => text.toLowerCase().replace(/[^a-z0-9]/g, ' ').split(/\s+/).filter(Boolean);
+            const words1 = normalize(userText);
+            const words2 = normalize(predefinedText);
+
+            const commonWords = words1.filter(word => words2.includes(word));
+            return (commonWords.length / Math.max(words1.length, words2.length)) * 100;
+        }
+
+        async function compareText() {
+            const userText = document.getElementById("hiddenInput").value.trim();
+            if (!userText) {
+                document.getElementById("result").innerText = "Please enter some text.";
+                return;
+            }
+
+            const predefinedText = await fetchPredefinedText();
+            if (!predefinedText) {
+                document.getElementById("result").innerText = "Error fetching predefined text.";
+                return;
+            }
+
+            const similarity = calculateSimilarity(userText, predefinedText);
+            document.getElementById("result").innerText = `Match: ${similarity.toFixed(2)}%`;
+        }
+    </script>
+</body>
+</html>
