@@ -1,46 +1,34 @@
-# Open Source Event
+# Blind Coding Challenge
 
-An open-source project that provides a simple text similarity matching tool using JavaScript and GitHub-hosted predefined text.
+## Overview
+The **Blind Coding Challenge** is a static webpage where users attempt to type code without being able to see their input. The page is split into two halves:
+- **Left Side:** Displays an image or a code snippet.
+- **Right Side:** Contains a hidden text input field where users type.
 
-## 🚀 Features
-- Compare user input with image provided.
-- Displays similarity percentage.
-- Fully client-side implementation (No backend required).
-
-## 📂 Repository Structure
-```
-open-source-event/
-│── index.html  # Main HTML file
-│── README.md   # Documentation
-│── style.css/     # Style File
-│── scripts.js/    # JavaScript files
-```
-
-## 🌐 Live Demo
-This project is deployed via **GitHub Pages**. You can access it here:
-👉 [Live Demo](https://manishgupta2026.github.io/open-source-event/)
-
-## 📜 Usage
-1. Enter your text in the provided input box.
-2. Click the **Submit** button.
-3. View the similarity percentage comparing your input with the predefined text.
-
-## 🛠️ Setup & Deployment
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/manishgupta2026/open-source-event.git
-   ```
-2. Open `index.html` in a web browser.
-3. To deploy updates:
-   - Push changes to the `main` branch.
-   - GitHub Pages will automatically update.
-
-## 🤝 Contributing
-Contributions are welcome! Feel free to fork the repository and submit a pull request.
-
-## 📄 License
-This project is licensed under the MIT License.
+After typing, users click the **'Submit'** button, and the page calculates how many lines of the typed code match the image.
 
 ---
-Made with ❤️ by Manish Gupta
+
+## Features
+- **Dual-Panel Layout:** The left half displays a reference image/snippet, and the right half is where users type blindly.
+- **Hidden Input:** Users cannot see their input while typing, adding to the challenge.
+- **Matching Algorithm:** The script compares the typed text with the image content to calculate accuracy.
+- **Score Calculation:** Displays the number of matching lines after submission.
+
+---
+
+## Technologies Used
+- **HTML & CSS:** For structuring and styling the page.
+- **JavaScript:** To handle text input, submission, and line matching logic.
+
+---
+
+## How to Use
+1. Look at the code snippet/image on the left side.
+2. Type the same code blindly on the right side.
+3. Click **Submit** to check how many lines match.
+4. The page will display your accuracy score.
+
+---
+
 
