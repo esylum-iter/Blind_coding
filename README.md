@@ -12,8 +12,8 @@ After typing, users click the **'Submit'** button, and the page calculates how m
 ## Features
 - **Dual-Panel Layout:** The left half displays a reference image/snippet, and the right half is where users type blindly.
 - **Hidden Input:** Users cannot see their input while typing, adding to the challenge.
-- **Matching Algorithm:** The script compares the typed text with the image content to calculate accuracy.
-- **Score Calculation:** Displays the number of matching lines after submission.
+- **Matching:** The script compares the typed text with the image content to calculate accuracy.
+- **Score Calculation:** Displays the percentage of matching lines after submission.
 
 ---
 
