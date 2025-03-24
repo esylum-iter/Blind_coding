@@ -38,3 +38,33 @@ async function compareText() {
     const similarity = calculateSimilarity(userText, predefinedText);
     document.getElementById("result").innerText = `Match: ${similarity.toFixed(2)}%`;
 }
+
+const codeSnippets = {
+    java: [
+        "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hello, World!\");\n    }\n}",
+        "for(int i = 0; i < 5; i++) {\n    System.out.println(\"Iteration \" + i);\n}",
+        "int factorial(int n) {\n    return (n == 0) ? 1 : n * factorial(n - 1);\n}"
+    ],
+    javascript: [
+        "function greet() {\n    console.log('Hello, World!');\n}\ngreet();",
+        "for(let i = 0; i < 5; i++) {\n    console.log(`Iteration ${i}`);\n}",
+        "const factorial = n => (n === 0 ? 1 : n * factorial(n - 1));\nconsole.log(factorial(5));"
+    ],
+    python: [
+        "def greet():\n    print('Hello, World!')\n\ngreet()",
+        "for i in range(5):\n    print(f'Iteration {i}')",
+        "def factorial(n):\n    return 1 if n == 0 else n * factorial(n-1)\n\nprint(factorial(5))"
+    ]
+};
+
+function updateCodeImage() {
+    const language = document.getElementById("languageSelector").value;
+    const randomIndex = Math.floor(Math.random() * codeSnippets[language].length);
+    const imageMap = {
+        java: "https://i.ibb.co/j9M1sd7F/image.png",
+        javascript: "jscode.png", 
+        python: "pycode.png"
+    };
+
+    document.querySelector(".image-container img").src = imageMap[language];
+}
