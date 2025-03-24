@@ -24,10 +24,11 @@ After typing, users click the **'Submit'** button, and the page calculates how m
 ---
 
 ## How to Use
-1. Look at the code snippet/image on the left side.
-2. Type the same code blindly on the right side.
-3. Click **Submit** to check how many lines match.
-4. The page will display your accuracy score.
+1. Go to https://kardebayan.github.io/Blind_coding
+2. Look at the code snippet/image on the left side.
+3. Type the same code blindly on the right side.
+4. Click **Submit** to check how many lines match.
+5. The page will display your accuracy score.
 
 ---
 
