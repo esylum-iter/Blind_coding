@@ -30,7 +30,6 @@ body {
 .image-container img {
     width: 100%;
     max-width: 400px;
-    border-radius: 10px;
 }
 .input-container {
     width: 50%;
