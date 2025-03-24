@@ -61,9 +61,8 @@ function updateCodeImage() {
     const language = document.getElementById("languageSelector").value;
     const randomIndex = Math.floor(Math.random() * codeSnippets[language].length);
     const imageMap = {
-        java: "https://i.ibb.co/j9M1sd7F/image.png",
-        javascript: "https://i.ibb.co/2kLw2Jc/javascript.png",
-        python: "https://i.ibb.co/Y8R1L2k/python.png"
+        javascript: "https://i.ibb.co/2kLw2Jc/javascript.png", //instead of this add the code image
+        python: "https://i.ibb.co/Y8R1L2k/python.png" //instead of this add the code image
     };
 
     document.querySelector(".image-container img").src = imageMap[language];
