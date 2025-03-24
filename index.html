@@ -14,6 +14,12 @@
                 <img src="https://i.ibb.co/j9M1sd7F/image.png" alt="code-Image">
             </div>
             <div class="input-container">
+                <div class="input-container">
+                    <select id="languageSelector" onchange="updateCodeImage()">
+                        <option value="java">Java</option>
+                        <option value="javascript">JavaScript</option>
+                        <option value="python">Python</option>
+                    </select>
                 <textarea id="hiddenInput" placeholder="Type here..."></textarea>
                 <button onclick="compareText()">Submit</button>
                 <p id="result"></p>
