@@ -38,3 +38,17 @@ async function compareText() {
     const similarity = calculateSimilarity(userText, predefinedText);
     document.getElementById("result").innerText = `Match: ${similarity.toFixed(2)}%`;
 }
+
+function updateImage(){
+    var language= document.getElementById("languageDropdown").value;
+    var imageElement=document.getElementById("referenceImage");
+
+    if(language === "java"){
+        imageElement.src= "https://i.ibb.co/j9M1sd7F/image.png";
+    }else if(language === "python"){
+        imageElement.src="";
+
+    }else if(language === "cpp"){
+        imageElement.src="";
+    }
+}
