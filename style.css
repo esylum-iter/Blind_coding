@@ -3,6 +3,7 @@
     padding: 0;
     box-sizing: border-box;
 }
+
 body {
     display: flex;
     justify-content: center;
@@ -35,6 +36,11 @@ body {
     max-width: 500px;
     border-radius: 10px;
 }
+
+.image-container {
+    margin-top: 20px;
+}
+
 .input-container {
     flex-direction: column;
 }
