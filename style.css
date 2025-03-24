@@ -27,9 +27,15 @@ body {
     justify-content: center;
     width: 100%;
 }
+.languageDropdown{
+    margin-top: 100px;
+    margin-left: 20px;
+
+}
 .image-container img {
     width: 100%;
     max-width: 400px;
+    /* margin-top: 300px; */
     border-radius: 10px;
 }
 .input-container {
@@ -79,5 +85,10 @@ button:hover {
     }
     .image-container, .input-container {
         width: 48%;
+    }
+}
+@media(max-width: 768px){
+    .languageDropdown{
+        margin-top: 400px;
     }
 }
